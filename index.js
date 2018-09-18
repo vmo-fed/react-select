@@ -1,1 +1,1 @@
-module.exports = require('./build/ReactTab');
+module.exports = require('./build/ReactSelect');

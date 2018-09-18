@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Select  from './ReactSelect';
+import Select  from '../';
 
 class HelloMessage extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class HelloMessage extends React.Component {
   render() {
     return (
       <div>
-        <Select onSelect={this.onSelect} data={[1,2,3,4]} initValue="请选择..." />
+        <Select onSelect={this.onSelect} data={['1', '2', '3', '4']} initValue="请选择..." />
       </div>
     );
   }
