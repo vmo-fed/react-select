@@ -1,0 +1,16 @@
+---
+name: react select
+---
+
+import { Playground, PropsTable } from 'docz'
+import Select from './ReactSelect.jsx'
+
+# ReactSelect
+<PropsTable of={Select} />
+
+## Basic usage
+
+
+<Playground>
+<Select onSelect={(item) => {console.log('选中的值为：', item)}} data={['1', '2', '3', '4']} initValue="请选择..." />
+</Playground>
