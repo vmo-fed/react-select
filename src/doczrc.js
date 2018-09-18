@@ -1,4 +1,4 @@
 export default {
-  base: '/react-tab/doc/',
+  base: '/react-select/doc/',
   hashRouter: true
 }
