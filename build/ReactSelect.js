@@ -44,7 +44,7 @@ const propTypesTabList = {
   onSelect: PropTypes.func.isRequired,
 
   /** 下拉选项的值 */
-  data: PropTypes.arrayOf().isRequired
+  data: PropTypes.arrayOf(PropTypes.shape(PropTypes.string)).isRequired
 };
 const defaultPropsTabList = {
   initValue: '请选择'
@@ -106,8 +106,7 @@ class ReactSelect extends Component {
       return React.createElement("div", {
         className: `${classes.selectOption}`,
         onClick: e => this.handleClickOption(item),
-        key: index,
-        value: item.value
+        key: index
       }, item.name);
     }));
   }
