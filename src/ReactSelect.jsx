@@ -45,7 +45,7 @@ const propTypesTabList = {
   /** 下拉以及关闭按钮点击事件的处理函数，值为选中的值或'' */
   onSelect: PropTypes.func.isRequired,
   /** 下拉选项的值 */
-  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: PropTypes.arrayOf().isRequired,
 }
 
 const defaultPropsTabList = {
@@ -79,10 +79,10 @@ class ReactSelect extends Component {
   }
 
   handleClickOption(item) {
-    this.props.onSelect(item);
+    this.props.onSelect({name: item.name, value: item.value});
     this.setState({
       isShow: false,
-      selectValue: item
+      selectValue: item.name,
     })
   }
 
@@ -99,11 +99,10 @@ class ReactSelect extends Component {
     if (!this.state.isShow || !this.props.data.length) {
       return null;
     }
-
     return (
       <div className={`${classes.common} ${classes.selectMenu}`}>
         {this.props.data.map((item, index) => {
-          return <div className={`${classes.selectOption}`} onClick={(e) => this.handleClickOption(item)} key={index}>{item}</div>
+          return <div className={`${classes.selectOption}`} onClick={(e) => this.handleClickOption(item)} key={index} value={item.value}>{item.name}</div>
         })}
       </div>
     );
