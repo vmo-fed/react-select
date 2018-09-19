@@ -44,7 +44,10 @@ const propTypesTabList = {
   onSelect: PropTypes.func.isRequired,
 
   /** 下拉选项的值 */
-  data: PropTypes.arrayOf(PropTypes.shape(PropTypes.string)).isRequired
+  data: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    value: PropTypes.string
+  })).isRequired
 };
 const defaultPropsTabList = {
   initValue: '请选择'

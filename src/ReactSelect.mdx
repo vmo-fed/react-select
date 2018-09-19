@@ -10,7 +10,10 @@ import Select from './ReactSelect.jsx'
 
 ## Basic usage
 
-
 <Playground>
-<Select onSelect={(item) => {console.log('选中的值为：', item)}} data={['1', '2', '3', '4']} initValue="请选择..." />
+<Select onSelect={({name, value}) => {console.log(name, value)}} data={[
+  {name: '1', value: 'value 1'},
+  {name: '2', value: 'value 2'},
+  {name: '3', value: 'value 3'},
+]} initValue="请选择..." />
 </Playground>
