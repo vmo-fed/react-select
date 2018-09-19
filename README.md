@@ -18,14 +18,20 @@ class HelloMessage extends React.Component {
     this.onSelect = this.onSelect.bind(this);
   }
 
-  onSelect(item) {
-    console.log('Selected value: ' + item);
+  onSelect({name, value}) {
+    console.log('Selected name: ' + name);
+    console.log('Selected name: ' + value);
   }
 
   render() {
+    const data = [
+      {name: '1', value: 'value 1'},
+      {name: '2', value: 'value 2'},
+      {name: '3', value: 'value 3'},
+    ];
     return (
       <div>
-        <Select onSelect={this.onSelect} data={['1', '2', '3', '4']} initValue="请选择..." />
+        <Select onSelect={this.onSelect} data={data} initValue="请选择..." />
       </div>
     );
   }
