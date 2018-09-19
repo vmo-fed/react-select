@@ -1,4 +1,4 @@
-# react-tab
+# react-select
 
 ### 安装
 
